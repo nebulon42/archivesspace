@@ -216,24 +216,24 @@ describe 'Accessibility', js: true, db: 'accessibility' do
     end
 
     # 519396
-    # it "sets role as none for ul element in merge dropdown" do
-    #   visit "/resources/1"
+    it "sets role as none for ul element in merge dropdown" do
+      visit "/resources/1"
 
-    #   within "#merge-dropdown" do
-    #     find(" button.merge-action").click
-    #     expect(page).to have_css("ul[role='none']")
-    #   end
-    # end
+      within "#merge-dropdown" do
+        find(" button.merge-action").click
+        expect(page).to have_css("ul[role='none']")
+      end
+    end
 
     # # 519396
-    # it "sets role as none for ul element in transfer dropdown" do
-    #   visit "/resources/1"
+    it "sets role as none for ul element in transfer dropdown" do
+      visit "/resources/1"
 
-    #   within "#transfer-dropdown" do
-    #     find("button.transfer-action").click
-    #     expect(page).to have_css("ul[role='none']")
-    #   end
-    # end
+      within "#transfer-dropdown" do
+        find("button.transfer-action").click
+        expect(page).to have_css("ul[role='none']")
+      end
+    end
 
     it "has role and aria attributes for the merge dropdown combobox" do
       visit "/resources/1"
