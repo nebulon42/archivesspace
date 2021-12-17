@@ -790,7 +790,7 @@
       <env key="APPCONFIG_DATA_DIRECTORY" value="${aspace.data_directory.dev}" />
       <env key="APPCONFIG_DB_URL" value="${env.APPCONFIG_DB_URL}" />
       <env key="APPCONFIG_SOLR_URL" value="${env.APPCONFIG_SOLR_URL}" />
-      <arg line="bin/rackup -s mizuno -o 0.0.0.0 -p ${aspace.public.port}" />
+      <arg line="../build/gems/bin/bundle exec rackup -s mizuno -o 0.0.0.0 -p ${aspace.public.port}" />
     </java>
   </target>
 
