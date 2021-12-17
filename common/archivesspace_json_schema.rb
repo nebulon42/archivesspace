@@ -4,7 +4,7 @@ require 'date'
 # depending on its value.
 class IfMissingAttribute < JSON::Schema::PropertiesAttribute
 
-  def self.validate(current_schema, data, fragments, validator, processor, options = {})
+  def self.validate(current_schema, data, fragments, processor, validator, options = {})
     super
 
     if data.is_a?(Hash)
@@ -133,7 +133,7 @@ class ArchivesSpaceReadOnlyDynamicEnumAttribute < JSON::Schema::TypeAttribute; e
 
 class ArchivesSpaceDynamicEnumAttribute < JSON::Schema::TypeAttribute
 
-  def self.validate(current_schema, data, fragments, validator, options = {})
+  def self.validate(current_schema, data, fragments, processor, validator, options = {})
     enum_name = current_schema.schema['dynamic_enum']
 
     if !JSONModel.init_args[:enum_source].valid?(enum_name, data)
@@ -181,33 +181,34 @@ class ArchivesSpaceSchema < JSON::Schema::Validator
     super
 
     # Run any custom validations if we've made it this far with no errors
-    if !already_failed?(fragments) && current_schema.schema.has_key?("validations")
-      current_schema.schema["validations"].each do |level_and_name|
-        level, name = level_and_name
+    # TO DO!!
+    # if !already_failed?(fragments) && current_schema.schema.has_key?("validations")
+    #   current_schema.schema["validations"].each do |level_and_name|
+    #     level, name = level_and_name
 
-        errors = JSONModel::custom_validations[name].call(data)
+    #     errors = JSONModel::custom_validations[name].call(data)
 
-        errors.each do |error|
-          error_string = nil
+    #     errors.each do |error|
+    #       error_string = nil
 
-          if error.is_a? Symbol
-            error_string = "Validation error code: #{error}"
-          else
-            field, msg = error
-            prefix = level == :warning ? "Warning generated for" : "Validation failed for"
-            error_string = "#{prefix} '#{field}': #{msg}"
+    #       if error.is_a? Symbol
+    #         error_string = "Validation error code: #{error}"
+    #       else
+    #         field, msg = error
+    #         prefix = level == :warning ? "Warning generated for" : "Validation failed for"
+    #         error_string = "#{prefix} '#{field}': #{msg}"
 
-          end
+    #       end
 
-          err = JSON::Schema::ValidationError.new(error_string,
-                                                  fragments,
-                                                  "custom_validation",
-                                                  current_schema)
+    #       err = JSON::Schema::ValidationError.new(error_string,
+    #                                               fragments,
+    #                                               "custom_validation",
+    #                                               current_schema)
 
-          JSON::Validator.validation_error(err)
-        end
-      end
-    end
+    #       JSON::Validator.validation_error(err)
+    #     end
+    #   end
+    # end
   end
 
   JSON::Validator.register_validator(self.new)
