@@ -49,6 +49,8 @@ fr:
     hierarch: Organisation des collections
     numeric: Description du conditionnement
     clipboard: Copier dans le presse-papier
+    cilpboard_cite_item: Copier la citation de l'élément dans le presse-papiers
+    cilpboard_cite_item_description: Copier la citation de la description de l'article dans le presse-papiers
     search_add_row: Ajouter une ligne
     search_remove_row: Supprimer une ligne dessous
     staff_link: Réservé au personnel
@@ -97,14 +99,13 @@ fr:
     results_head: "%{type} affichés: %{start} - %{end} de %{total}"
     result: Résultats
     results: Résultats
-    search_for: "Chercher  %{type} où %{conditions}"
+    search_for: "Chercher %{type} où %{conditions}"
     keyword_contain: "<strong>mot(s)-clé(s)</strong>: <span class='searchterm'>%{kw}</span>"
     title_contain: "l'<strong>intitulé</strong> contient  <span class='searchterm'>%{kw}</span>"
     notes_contain: "la <strong>note</strong> contient  <span class='searchterm'>%{kw}</span>"
     creators_text_contain: "le <strong>producteur</strong> contient <span class='searchterm'>%{kw}</span>"
     subjects_text_contain: "le <strong>sujet</strong> contient <span class='searchterm'>%{kw}</span>"
     identifier_contain: "L'<strong>identifiant</strong> contient <span class='searchterm'>%{kw}</span>"
-    four_part_id_contain: "L'<strong>identifiant</strong> contient <span class='searchterm'>%{kw}</span>"
     in_repository: " dans <strong>%{name}</strong>"
     anything: "*"
     search_term: Terme à chercher
@@ -253,7 +254,7 @@ fr:
   linked_digital_objects: Objets numériques
 
   accession:
-    _singular: Non traitée
+    _singular: Non traitée matériau
     _plural: Instances de matériel non traité
     _public:
       section:
@@ -399,20 +400,20 @@ fr:
 
   agent_person:
     _singular: Personne
-    _plural: People
 
+    _plural: Personnes
   agent_family:
     _singular: Famille
-    _plural: Families
 
+    _plural: Familles
   agent_corporate_entity:
     _singular: Personne morale
-    _plural: Organizations
 
+    _plural: Organisations
   agent_software:
     _singular: Logiciel
-    _plural: Software
 
+    _plural: Logiciel
   components: {}
   instance:
     _public: {}

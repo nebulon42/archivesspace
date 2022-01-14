@@ -27,6 +27,8 @@ ja:
     hierarch: 収集組織
     numeric: コンテナインベントリ
     clipboard: クリップボードにコピー
+    cilpboard_cite_item: アイテムの引用をクリップボードにコピーする
+    cilpboard_cite_item_description: アイテムの説明の引用をクリップボードにコピーする
     search_add_row: 検索行を追加する
     search_remove_row: 下の行を削除
     staff_link: 関係者以外立ち入り禁止
@@ -77,7 +79,6 @@ ja:
     creators_text_contain: "<strong>作成者</strong>に<span class='searchterm'>%{kw}</span>"
     subjects_text_contain: "<strong>被写体に</strong>は<span class='searchterm'>%{kw}</span>"
     identifier_contain: "<strong>識別子に</strong>は<span class='searchterm'>%{kw}</span>"
-    four_part_id_contain: "<strong>識別子に</strong>は<span class='searchterm'>%{kw}</span>"
     in_repository: "<strong>%{name}</strong>"
     anything: "*"
     search_term: 検索語
@@ -184,11 +185,11 @@ ja:
       AND: AND
       OR: OR
       NOT: NOT
-    limit_label: Limit by record type
-    add_row: Add row
-    remove_row: Remove row
     nav_switcher: {}
     index_switcher: {}
+    limit_label: レコードタイプによる制限
+    add_row: 行を追加
+    remove_row: 行を削除
   contains: "%{count} %{type}含みます%{type}"
   found: "%{count} %{type}見つかりました"
   coll_obj:
@@ -345,16 +346,16 @@ ja:
         related_agent_dates: 日付
   agent_person:
     _singular: 人
-    _plural: People
+    _plural: 人々
   agent_family:
     _singular: 家族
-    _plural: Families
+    _plural: 家族
   agent_corporate_entity:
     _singular: 組織
-    _plural: Organizations
+    _plural: 組織
   agent_software:
     _singular: ソフトウェア
-    _plural: Software
+    _plural: ソフトウェア
   components: {}
   instance:
     _public: {}
@@ -461,16 +462,15 @@ ja:
     note_mandate: 委任
     note_structure_or_genealogy: 構造または系図
     note_text: 注意
-
   metadata_rights_declaration:
-    _plural: Metadata Rights Declarations
-    _singular: Metadata Rights Declaration
-    license: License
-    descriptive_note: Descriptive Note
-    file_uri: File URI
-    xlink_title_attribute: Xlink Title Attribute
-    xlink_role_attribute: Xlink Role Attribute
-    xlink_arcrole_attribute: Xlink Arcrole Attribute
-    file_version_xlink_actuate_attribute: Xlink Actuate Attribute
-    file_version_xlink_show_attribute: Xlink Show Attribute
-    last_verified_date: Last Verified Date
+    file_version_xlink_show_attribute: Xlinkの属性を表示
+    last_verified_date: 最終確認日
+    _plural: メタデータの権利宣言
+    _singular: メタデータの権利宣言
+    license: ライセンス
+    descriptive_note: 注釈
+    file_uri: ファイルURI
+    xlink_title_attribute: Xlinkタイトル属性
+    xlink_role_attribute: Xlinkロール属性
+    xlink_arcrole_attribute: XlinkArcrole属性
+    file_version_xlink_actuate_attribute: XlinkActuate属性

@@ -30,6 +30,8 @@ es:
     hierarch: Organización de la colección
     numeric: Inventario de contenedores
     clipboard: Copiar al portapapeles
+    cilpboard_cite_item: Copiar la cita del elemento al portapapeles
+    cilpboard_cite_item_description: Copiar la cita de la descripción del artículo al portapapeles
     search_add_row: Agregar una fila de búsqueda
     search_remove_row: Eliminar la fila de abajo
     staff_link: Sólo Personal
@@ -78,14 +80,13 @@ es:
     results_head: "Mostrando %{type}: %{start} - %{end} of %{total}"
     result: Resultado
     results: Resultados
-    search_for: "Buscar  %{type} donde %{conditions}"
+    search_for: "Buscar %{type} donde %{conditions}"
     keyword_contain: "<strong>palabra(s)</strong>: <span class='searchterm'>%{kw}</span>"
     title_contain: "the <strong>título</strong> contiene  <span class='searchterm'>%{kw}</span>"
     notes_contain: "the <strong>nota</strong> contiene  <span class='searchterm'>%{kw}</span>"
     creators_text_contain: "the <strong>autor</strong> contiene <span class='searchterm'>%{kw}</span>"
     subjects_text_contain: "the <strong>sujeto</strong> contiene <span class='searchterm'>%{kw}</span>"
     identifier_contain: "the <strong>identificador</strong> contiene <span class='searchterm'>%{kw}</span>"
-    four_part_id_contain: "the <strong>identificador</strong> contiene <span class='searchterm'>%{kw}</span>"
     in_repository: " in <strong>%{name}</strong>"
     anything: "*"
     search_term: Término de búsqueda
@@ -379,20 +380,20 @@ es:
 
   agent_person:
     _singular: Persona
-    _plural: People
 
+    _plural: Persona
   agent_family:
     _singular: Familia
-    _plural: Families
 
+    _plural: Familias
   agent_corporate_entity:
     _singular: Entidad corporativa
-    _plural: Organizations
 
+    _plural: Organizaciones
   agent_software:
     _singular: Software
-    _plural: Software
 
+    _plural: Programa
   components: {}
   instance:
     _public: {}

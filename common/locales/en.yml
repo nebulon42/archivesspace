@@ -1897,6 +1897,7 @@ en:
       delete_assessment_record: delete assessment records
       manage_assessment_attributes: create/update/delete repository assessment attributes definitions
       manage_enumeration_record: create/update/delete controlled value records
+      manage_custom_report_templates: manage custom report templates
     _singular: Group
     _plural: Groups
 
@@ -2065,6 +2066,8 @@ en:
         <li>Mandeville Special Collections Library</li>
         <li>Tamiment Library and Robert F. Wagner Labor Archives</li>
         </ul>
+    ark_shoulder: ARK Shoulder (local namespace)
+    ark_shoulder_tooltip: Per-repository string to be included in generated ARKs
     org_code: Organization / Agency Code
     org_code_tooltip: |
         <p>A code compliant with ISO/DIS 15511 Information and Documentation International Standard Identifier for Libraries and Related Organizations (ISIL). For United States institutions, this includes codes from the MARC Organization Code list.</p>
@@ -2319,8 +2322,10 @@ en:
   defaults: &defaults_attributes
     general_section: General Settings
     show_suppressed: Show Suppressed?
+    include_unpublished: Include Unpublished Records in Exports?
     show_suppressed_tooltip: Whether to show suppressed records that you have permission to see when browsing.
     publish: Publish?
+    rde_sort_alpha: Display RDE Templates Alphabetically?
     publish_tooltip: Whether to publish new records by default.
     default_values: Pre-populate Records?
     default_values_tooltip: Whether to pre-populate new Accession and Resource records with default values.
@@ -2427,7 +2432,8 @@ en:
     short_name_already_in_use: The repository short name must be unique within this ArchivesSpace
     custom_report_template_name_not_unique: The custom report template's name must be unique.
     custom_report_must_include_field_or_subreport: The custom report template must include at least one field or subreport.
-    missing_filter_values: Selected to filter results by field but no value(s) given
+    missing_end_filter_date: Start and end dates are required to filter by date. Please provide an end date.
+    missing_start_filter_date: Start and end dates are required to filter by date. Please provide a start date.
     must_be_a_valid_email_address: Email address field must contain a valid address
     repo_set_desc_required: Repository set description is required for creating an OAI repository set
     repo_set_name_required: Repository set name is required for creating an OAI repository set
@@ -2443,6 +2449,9 @@ en:
     requires_that_end_dates_are_after_begin_dates: End Dates must be after Begin Dates
     must_specify_a_primary_subject: "Description Information: Record is missing a primary subject"
     subrecord_not_allowed_for_agent_software: "Software Agents cannot have record control or relation subrecords"
+    ark_collision: There was a problem while generating an ARK for this record. Please contact your system administrator.
+    external_ark_collision: External ARK already in use
+    ark_format_error: One of the ARKs provided was not a valid ARK.
 
   job:
     _singular: Background Job
@@ -2491,6 +2500,10 @@ en:
     import_type_ead_xml: EAD
     import_type_assessment_csv: Assessment CSV
     import_type_accession_csv: Accession CSV
+    bulk_import_csv: Bulk Import AO CSV
+    bulk_import_xlsx: Bulk Import AO XLSX
+    bulk_import_DO_csv: Bulk Import DO CSV
+    bulk_import_DO_xlsx: Bulk Import DO XLSX
     import_type_digital_object_csv: Digital Object CSV
     import_type_eac_xml: EAC-CPF
     import_type_location_csv: Location CSV
@@ -2748,17 +2761,20 @@ en:
     record_type: Record Type
     display: Display?
     limit: Limit
-    narrow_by: Narrow By?
-    values: Values
-    value: Value
+    values: Narrow by Values
+    value: Narrow by Value
     "true": "Yes"
     "false": "No"
-    start_date: Start Date
-    end_date: End Date
+    start_date: Narrow by Start Date
+    end_date: Narrow by End Date
     field: Field
     include: Include
     _singular: Custom Report Template
     _plural: Custom Report Templates
+
+  bulk_import_template:
+    _singular: Bulk Import Template
+    _plural: Bulk Import Templates
 
   repository_oai:
     oai_is_disabled_tooltip: OAI is disabled tooltip
@@ -2776,6 +2792,7 @@ en:
     sponsor_set_description_tooltip: Sponsor set description tooltip
 
   bulk_import:
+    templates: Bulk Import Templates
     row: "Row %{row}"
     processing_row: "Processing row %{row}"
     dig_assoc: Digital object added to archival object
@@ -2971,3 +2988,19 @@ en:
   last_modified_by: Last modified by
   create_time: Created
   user_mtime: Modified
+
+  arks:
+    ark: ARK
+    edit: Edit ARKs
+    current: current
+    remove_ark: Remove
+    add_new: Add new ARK
+    set_current: Set to current
+    save: Save ARKs
+    no_changes: No changes to save
+    modal_title: Edit ARKs for current record
+    unsubmitted_input: You have unsubmitted input
+    only_current_ark_can_be_external: The current ARK cannot be replaced while it is marked as external.
+    ark_editor_errors:
+      ark_collision: One of the ARKs provided is already in use.
+      ark_format_error: One of the ARKs provided was not a valid ARK.
