@@ -21,6 +21,7 @@ I18n.default_locale = AppConfig[:locale]
 module I18n
 
   LOCALES = {
+    'de' => 'ger',
     'en' => 'eng',
     'es' => 'spa',
     'fr' => 'fre',
